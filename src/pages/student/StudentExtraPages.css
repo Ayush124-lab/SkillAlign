@@ -1,0 +1,479 @@
+/* =========================================
+   EXTRA STUDENT PAGES
+========================================= */
+
+.extra-page {
+  min-height: 100vh;
+  background: #f5f7fb;
+  color: #172554;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.extra-navbar {
+  height: 70px;
+  background: #172554;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 28px;
+
+  gap: 18px;
+}
+
+.extra-navbar-logo {
+  color: white;
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.back-button {
+  width: 38px;
+  height: 38px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  color: white;
+
+  font-size: 23px;
+
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+
+/* =========================================
+   PAGE CONTENT
+========================================= */
+
+.extra-page-content {
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  padding: 42px 30px 60px;
+}
+
+.page-heading {
+  margin-bottom: 30px;
+}
+
+.page-label {
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  color: #667085;
+}
+
+.page-heading h1 {
+  margin: 8px 0 9px;
+
+  font-size: 30px;
+
+  color: #172554;
+}
+
+.page-heading p {
+  margin: 0;
+
+  max-width: 700px;
+
+  color: #667085;
+
+  font-size: 15px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   ROADMAP
+========================================= */
+
+.roadmap-container {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 15px;
+}
+
+.roadmap-page-card {
+  background: white;
+
+  border-radius: 16px;
+
+  padding: 22px;
+
+  display: flex;
+
+  gap: 18px;
+
+  box-shadow: 0 7px 22px rgba(0, 0, 0, 0.05);
+}
+
+.roadmap-number {
+  min-width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  background: #2563eb;
+
+  color: white;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 700;
+}
+
+.roadmap-content {
+  flex: 1;
+}
+
+.roadmap-title-row {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+.roadmap-title-row h2 {
+  margin: 0;
+
+  font-size: 18px;
+
+  color: #172554;
+}
+
+.roadmap-content p {
+  margin: 7px 0 0;
+
+  color: #667085;
+
+  font-size: 14px;
+
+  line-height: 1.55;
+}
+
+.duration {
+  padding: 6px 10px;
+
+  border-radius: 20px;
+
+  background: #eef4ff;
+
+  color: #2563eb;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   JOBS
+========================================= */
+
+.jobs-container {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 16px;
+}
+
+.job-card {
+  background: white;
+
+  border-radius: 16px;
+
+  padding: 23px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 25px;
+
+  box-shadow: 0 7px 22px rgba(0, 0, 0, 0.05);
+}
+
+.job-main {
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+}
+
+.job-icon {
+  width: 50px;
+  height: 50px;
+
+  border-radius: 12px;
+
+  background: #eef4ff;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 23px;
+
+  flex-shrink: 0;
+}
+
+.job-main h2 {
+  margin: 0 0 5px;
+
+  font-size: 18px;
+
+  color: #172554;
+}
+
+.company-name {
+  margin: 0 0 3px;
+
+  color: #344054;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+.job-location {
+  margin: 0;
+
+  color: #667085;
+
+  font-size: 13px;
+}
+
+.job-right {
+  min-width: 190px;
+
+  text-align: right;
+}
+
+.match-box {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-end;
+}
+
+.match-box strong {
+  font-size: 22px;
+
+  color: #2563eb;
+}
+
+.match-box span {
+  font-size: 11px;
+
+  color: #667085;
+}
+
+.missing-skill {
+  margin: 7px 0 12px;
+
+  font-size: 12px;
+
+  color: #c2410c;
+}
+
+.apply-button {
+  border: none;
+
+  background: #2563eb;
+
+  color: white;
+
+  padding: 9px 19px;
+
+  border-radius: 8px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.apply-button:hover {
+  background: #1d4ed8;
+}
+
+
+/* =========================================
+   FUTURE OPPORTUNITIES
+========================================= */
+
+.future-container {
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  gap: 16px;
+}
+
+.future-opportunity-card {
+  background: white;
+
+  border-radius: 16px;
+
+  padding: 24px;
+
+  display: flex;
+
+  gap: 18px;
+
+  box-shadow: 0 7px 22px rgba(0, 0, 0, 0.05);
+}
+
+.future-skill-icon {
+  width: 48px;
+  height: 48px;
+
+  border-radius: 12px;
+
+  background: #eef4ff;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 22px;
+
+  flex-shrink: 0;
+}
+
+.future-content {
+  flex: 1;
+}
+
+.future-skill {
+  font-size: 12px;
+
+  font-weight: 700;
+
+  color: #2563eb;
+
+  text-transform: uppercase;
+}
+
+.future-content h2 {
+  margin: 6px 0 12px;
+
+  font-size: 18px;
+
+  color: #172554;
+}
+
+.future-content p {
+  margin: 0 0 3px;
+
+  color: #667085;
+
+  font-size: 13px;
+}
+
+.future-content strong {
+  font-size: 14px;
+
+  color: #344054;
+}
+
+
+/* =========================================
+   NOTE
+========================================= */
+
+.future-note {
+  margin-top: 22px;
+
+  padding: 17px 20px;
+
+  background: #fff8eb;
+
+  border-radius: 12px;
+
+  color: #7a4b00;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+
+  display: flex;
+
+  gap: 5px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .extra-page-content {
+    padding: 30px 18px 45px;
+  }
+
+  .page-heading h1 {
+    font-size: 25px;
+  }
+
+  .job-card {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .job-right {
+    width: 100%;
+
+    text-align: left;
+  }
+
+  .match-box {
+    align-items: flex-start;
+  }
+
+  .roadmap-title-row {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .future-note {
+    flex-direction: column;
+  }
+}

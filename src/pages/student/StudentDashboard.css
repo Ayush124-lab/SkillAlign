@@ -1,0 +1,864 @@
+/* =========================================
+   STUDENT DASHBOARD
+========================================= */
+
+.student-dashboard {
+  min-height: 100vh;
+  background: #f5f7fb;
+  color: #172554;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.dashboard-navbar {
+  height: 70px;
+  background: #172554;
+  display: flex;
+  align-items: center;
+  padding: 0 28px;
+  gap: 18px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.menu-button {
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 26px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.navbar-logo {
+  color: white;
+  font-size: 23px;
+  font-weight: 700;
+}
+
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.dashboard-content {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 38px 30px 60px;
+}
+
+.dashboard-greeting {
+  margin-bottom: 25px;
+}
+
+.dashboard-greeting h1 {
+  margin: 0 0 8px;
+  font-size: 31px;
+  font-weight: 700;
+  color: #172554;
+}
+
+.dashboard-greeting p {
+  margin: 0;
+  color: #667085;
+  font-size: 15px;
+}
+
+
+/* =========================================
+   CAREER GOAL
+========================================= */
+
+.career-goal-section {
+  background: white;
+  border-radius: 18px;
+  padding: 22px 26px;
+  margin-bottom: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.career-goal-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #667085;
+}
+
+.career-goal-section h2 {
+  margin: 6px 0 4px;
+  font-size: 24px;
+  color: #172554;
+}
+
+.career-goal-section p {
+  margin: 0;
+  color: #667085;
+  font-size: 14px;
+}
+
+.career-goal-button {
+  border: none;
+  background: #2563eb;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.career-goal-button:hover {
+  background: #1d4ed8;
+}
+
+
+/* =========================================
+   SKILL MATCH CARD
+========================================= */
+
+.skill-match-card {
+  background: white;
+  border-radius: 20px;
+  padding: 30px 34px;
+  margin-bottom: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.skill-match-info {
+  max-width: 650px;
+}
+
+.section-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #667085;
+}
+
+.skill-match-info h2 {
+  margin: 8px 0;
+  font-size: 25px;
+  color: #172554;
+}
+
+.skill-match-info p {
+  margin: 0;
+  color: #667085;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.target-role-display {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #344054;
+}
+
+.target-role-display strong {
+  color: #2563eb;
+}
+
+
+/* =========================================
+   CIRCULAR MATCH
+========================================= */
+
+.skill-circle {
+  width: 145px;
+  height: 145px;
+  border-radius: 50%;
+
+  background: conic-gradient(
+    #2563eb 68%,
+    #e5e7eb 68%
+  );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.skill-circle-inner {
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  background: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-circle-inner span {
+  font-size: 29px;
+  font-weight: 700;
+  color: #172554;
+}
+
+.skill-circle-inner small {
+  font-size: 11px;
+  color: #667085;
+  margin-top: 2px;
+}
+
+
+/* =========================================
+   DASHBOARD GRID
+========================================= */
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+
+/* =========================================
+   DASHBOARD CARDS
+========================================= */
+
+.dashboard-card {
+  background: white;
+  border-radius: 18px;
+  padding: 26px;
+
+  min-height: 205px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+
+  transition: transform 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.card-icon {
+  width: 45px;
+  height: 45px;
+
+  border-radius: 12px;
+  background: #eef4ff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 21px;
+  margin-bottom: 17px;
+}
+
+.dashboard-card h3 {
+  margin: 0 0 9px;
+  font-size: 19px;
+  color: #172554;
+}
+
+.dashboard-card p {
+  margin: 0 0 20px;
+  color: #667085;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.card-button {
+  margin-top: auto;
+
+  border: none;
+  background: #2563eb;
+  color: white;
+
+  padding: 10px 17px;
+  border-radius: 9px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.card-button:hover {
+  background: #1d4ed8;
+}
+
+.future-card {
+  grid-column: span 2;
+}
+
+
+/* =========================================
+   SIDE DRAWER
+========================================= */
+
+.drawer-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.35);
+
+  z-index: 199;
+}
+
+.side-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 280px;
+  height: 100vh;
+
+  background: white;
+
+  z-index: 200;
+
+  box-shadow: 8px 0 25px rgba(0, 0, 0, 0.12);
+}
+
+.drawer-header {
+  height: 70px;
+
+  background: #172554;
+  color: white;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 25px;
+}
+
+.drawer-header h2 {
+  margin: 0;
+  font-size: 21px;
+}
+
+.drawer-content {
+  padding: 18px 12px;
+}
+
+.drawer-item {
+  width: 100%;
+
+  border: none;
+  background: transparent;
+
+  padding: 14px 16px;
+
+  text-align: left;
+
+  border-radius: 9px;
+
+  font-size: 15px;
+  color: #344054;
+
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+.drawer-item:hover {
+  background: #f2f4f7;
+}
+
+.logout-item {
+  color: #dc2626;
+}
+
+
+/* =========================================
+   MODAL OVERLAY
+========================================= */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(15, 23, 42, 0.55);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  z-index: 500;
+}
+
+
+/* =========================================
+   CAREER GOAL MODAL
+========================================= */
+
+.career-goal-modal {
+  width: 480px;
+  max-width: 100%;
+
+  background: white;
+
+  border-radius: 18px;
+
+  padding: 28px;
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.career-goal-modal h2 {
+  margin: 0 0 8px;
+  color: #172554;
+}
+
+.career-goal-modal p {
+  margin: 0 0 22px;
+
+  color: #667085;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.career-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.career-option {
+  padding: 13px;
+
+  border: 1px solid #d0d5dd;
+
+  background: white;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  font-size: 14px;
+
+  text-align: left;
+
+  transition: 0.2s ease;
+}
+
+.career-option:hover {
+  border-color: #2563eb;
+  background: #f8faff;
+}
+
+.career-option.selected {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+}
+
+.career-modal-close {
+  margin-top: 20px;
+
+  width: 100%;
+
+  padding: 12px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #f2f4f7;
+  color: #344054;
+
+  cursor: pointer;
+
+  font-weight: 600;
+}
+
+
+/* =========================================
+   GENERAL MODALS
+========================================= */
+
+.skills-modal,
+.analysis-modal,
+.account-modal {
+  width: 650px;
+  max-width: 100%;
+
+  max-height: 90vh;
+  overflow-y: auto;
+
+  background: white;
+
+  border-radius: 18px;
+
+  padding: 30px;
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.skills-modal h2,
+.analysis-modal h2,
+.account-modal h2 {
+  margin: 0 0 8px;
+
+  font-size: 24px;
+  color: #172554;
+}
+
+.skills-modal > p,
+.analysis-modal > p {
+  margin: 0 0 25px;
+
+  color: #667085;
+  font-size: 14px;
+}
+
+
+/* =========================================
+   SKILLS FORM
+========================================= */
+
+.skills-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skills-form label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #344054;
+
+  margin-top: 8px;
+}
+
+.skills-form input,
+.skills-form textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  border: 1px solid #d0d5dd;
+
+  border-radius: 9px;
+
+  padding: 12px 13px;
+
+  font-size: 14px;
+
+  font-family: inherit;
+
+  outline: none;
+
+  transition: border 0.2s ease;
+}
+
+.skills-form input:focus,
+.skills-form textarea:focus {
+  border-color: #2563eb;
+}
+
+.skills-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+
+/* =========================================
+   MODAL BUTTONS
+========================================= */
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+
+  margin-top: 25px;
+}
+
+.primary-button,
+.secondary-button {
+  padding: 11px 18px;
+
+  border-radius: 9px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.primary-button {
+  border: none;
+
+  background: #2563eb;
+  color: white;
+}
+
+.primary-button:hover {
+  background: #1d4ed8;
+}
+
+.secondary-button {
+  border: 1px solid #d0d5dd;
+
+  background: white;
+  color: #344054;
+}
+
+.full-width {
+  width: 100%;
+}
+
+
+/* =========================================
+   ANALYSIS
+========================================= */
+
+.analysis-section {
+  margin-bottom: 27px;
+}
+
+.analysis-section h3 {
+  margin: 0 0 13px;
+
+  font-size: 17px;
+
+  color: #172554;
+}
+
+.analysis-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.analysis-tags span {
+  background: #ecfdf3;
+  color: #027a48;
+
+  padding: 8px 12px;
+
+  border-radius: 20px;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.analysis-tags.missing span {
+  background: #fff7ed;
+  color: #c2410c;
+}
+
+
+/* =========================================
+   SKILL TABLE
+========================================= */
+
+.skill-table-wrapper {
+  overflow-x: auto;
+}
+
+.skill-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  font-size: 13px;
+}
+
+.skill-table th,
+.skill-table td {
+  border-bottom: 1px solid #eaecf0;
+
+  padding: 12px 10px;
+
+  text-align: left;
+}
+
+.skill-table th {
+  background: #f8fafc;
+
+  color: #475467;
+
+  font-weight: 600;
+}
+
+.skill-table td {
+  color: #344054;
+}
+
+
+/* =========================================
+   ROADMAP
+========================================= */
+
+.roadmap-list {
+  margin: 0;
+
+  padding-left: 22px;
+}
+
+.roadmap-list li {
+  padding-left: 5px;
+
+  margin-bottom: 17px;
+
+  color: #172554;
+}
+
+.roadmap-list li strong {
+  display: block;
+
+  font-size: 14px;
+
+  margin-bottom: 4px;
+}
+
+.roadmap-list li span {
+  display: block;
+
+  color: #667085;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   ACCOUNT
+========================================= */
+
+.account-modal {
+  width: 450px;
+}
+
+.account-info {
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+
+  margin: 25px 0;
+}
+
+.account-info div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+
+  padding-bottom: 14px;
+
+  border-bottom: 1px solid #eaecf0;
+}
+
+.account-info span {
+  font-size: 12px;
+
+  color: #667085;
+}
+
+.account-info strong {
+  font-size: 14px;
+
+  color: #172554;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 800px) {
+
+  .dashboard-content {
+    padding: 28px 18px 45px;
+  }
+
+  .career-goal-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .career-goal-button {
+    width: 100%;
+  }
+
+  .skill-match-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+  }
+
+  .skill-circle {
+    align-self: center;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .future-card {
+    grid-column: span 1;
+  }
+
+}
+
+
+@media (max-width: 550px) {
+
+  .dashboard-navbar {
+    padding: 0 18px;
+  }
+
+  .dashboard-greeting h1 {
+    font-size: 26px;
+  }
+
+  .skill-match-card {
+    padding: 24px;
+  }
+
+  .career-options {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-modal,
+  .analysis-modal,
+  .account-modal,
+  .career-goal-modal {
+    padding: 22px;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+  }
+
+  .primary-button,
+  .secondary-button {
+    width: 100%;
+  }
+
+}
