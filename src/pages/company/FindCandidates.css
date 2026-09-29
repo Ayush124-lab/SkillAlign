@@ -1,0 +1,430 @@
+.find-candidates-page {
+  min-height: 100vh;
+  background: #f8fafc;
+  color: #172554;
+}
+
+/* Navbar */
+
+.find-candidates-navbar {
+  height: 64px;
+  background: #172554;
+  color: white;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 30px;
+  gap: 18px;
+}
+
+.find-candidates-back {
+  border: none;
+  background: transparent;
+  color: white;
+
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.find-candidates-logo {
+  font-size: 19px;
+  font-weight: 600;
+}
+
+
+/* Main */
+
+.find-candidates-main {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 42px 30px 60px;
+}
+
+.find-candidates-header {
+  margin-bottom: 28px;
+}
+
+.find-candidates-header h1 {
+  margin: 0 0 8px;
+  font-size: 28px;
+}
+
+.find-candidates-header p {
+  margin: 0;
+  color: #64748b;
+  font-size: 15px;
+}
+
+
+/* Summary */
+
+.vacancy-summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+
+  margin-bottom: 28px;
+}
+
+.vacancy-summary > div {
+  background: white;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+
+  padding: 20px 24px;
+
+  box-shadow: 0 5px 20px rgba(15, 23, 42, 0.05);
+}
+
+.vacancy-summary span {
+  display: block;
+
+  color: #64748b;
+  font-size: 13px;
+
+  margin-bottom: 7px;
+}
+
+.vacancy-summary strong {
+  font-size: 28px;
+}
+
+
+/* Role Grid */
+
+.vacancy-role-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+
+/* Role Card */
+
+.vacancy-role-card {
+  background: white;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+
+  padding: 25px;
+
+  box-shadow: 0 5px 20px rgba(15, 23, 42, 0.05);
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.vacancy-role-card:hover {
+  border-color: #94a3b8;
+}
+
+.vacancy-role-card-selected {
+  border-color: #172554;
+}
+
+
+/* Role Top */
+
+.vacancy-role-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 15px;
+
+  margin-bottom: 22px;
+}
+
+.vacancy-role-top h2 {
+  margin: 0 0 5px;
+
+  font-size: 19px;
+}
+
+.vacancy-role-top p {
+  margin: 0;
+
+  color: #64748b;
+  font-size: 13px;
+}
+
+.active-badge {
+  background: #dcfce7;
+  color: #15803d;
+
+  padding: 5px 9px;
+
+  border-radius: 20px;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+
+/* Vacancy Counter */
+
+.vacancy-count-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 15px 0;
+
+  border-top: 1px solid #f1f5f9;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.vacancy-count-section > span {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.vacancy-counter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.vacancy-counter button {
+  width: 30px;
+  height: 30px;
+
+  border: 1px solid #cbd5e1;
+  background: white;
+
+  border-radius: 7px;
+
+  font-size: 19px;
+
+  color: #172554;
+
+  cursor: pointer;
+}
+
+.vacancy-counter button:hover {
+  background: #f1f5f9;
+}
+
+.vacancy-counter button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.vacancy-counter strong {
+  min-width: 22px;
+
+  text-align: center;
+
+  font-size: 19px;
+}
+
+
+/* Skills */
+
+.required-skills {
+  margin-top: 18px;
+}
+
+.required-skills > span {
+  display: block;
+
+  margin-bottom: 9px;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 7px;
+}
+
+.skill-tags span {
+  background: #eff6ff;
+  color: #1e3a8a;
+
+  padding: 5px 9px;
+
+  border-radius: 6px;
+
+  font-size: 11px;
+}
+
+
+/* View Candidates */
+
+.view-candidates-btn {
+  width: 100%;
+
+  margin-top: 20px;
+
+  border: none;
+  border-radius: 9px;
+
+  padding: 11px;
+
+  background: #172554;
+  color: white;
+
+  font-size: 13px;
+
+  cursor: pointer;
+}
+
+.view-candidates-btn:hover {
+  background: #1e3a8a;
+}
+
+
+/* Candidate Preview */
+
+.candidate-preview {
+  margin-top: 22px;
+
+  padding-top: 18px;
+
+  border-top: 1px solid #e2e8f0;
+}
+
+.candidate-preview h3 {
+  margin: 0 0 13px;
+
+  font-size: 16px;
+}
+
+
+/* Candidate */
+
+.candidate-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 14px 0;
+
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.candidate-item:last-child {
+  border-bottom: none;
+}
+
+.candidate-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.candidate-info > strong {
+  font-size: 14px;
+}
+
+.candidate-info p {
+  margin: 4px 0 10px;
+
+  color: #64748b;
+  font-size: 11px;
+}
+
+
+/* Matched / Missing Skills */
+
+.candidate-skill-row {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 6px;
+
+  margin-bottom: 10px;
+}
+
+.skill-match,
+.skill-missing {
+  padding: 4px 7px;
+
+  border-radius: 5px;
+
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.skill-match {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.skill-missing {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+
+/* Match Bar */
+
+.candidate-match-bar {
+  width: 100%;
+  height: 6px;
+
+  background: #e2e8f0;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+}
+
+.candidate-match-fill {
+  height: 100%;
+
+  background: #172554;
+
+  border-radius: 10px;
+}
+
+
+/* Match Percentage */
+
+.candidate-match {
+  min-width: 65px;
+
+  text-align: right;
+
+  margin-left: 15px;
+}
+
+.candidate-match strong {
+  display: block;
+
+  font-size: 20px;
+
+  color: #172554;
+}
+
+.candidate-match span {
+  font-size: 10px;
+
+  color: #64748b;
+}
+
+
+/* Responsive */
+
+@media (max-width: 750px) {
+
+  .find-candidates-main {
+    padding: 30px 18px;
+  }
+
+  .vacancy-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .vacancy-role-grid {
+    grid-template-columns: 1fr;
+  }
+
+}

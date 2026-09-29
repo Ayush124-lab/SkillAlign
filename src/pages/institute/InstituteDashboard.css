@@ -1,0 +1,267 @@
+/* =========================
+   INSTITUTE DASHBOARD
+========================= */
+
+.institute-dashboard {
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.institute-navbar {
+  height: 70px;
+  background: #172554;
+  display: flex;
+  align-items: center;
+  padding: 0 28px;
+  color: white;
+  position: relative;
+  z-index: 100;
+}
+
+.institute-menu-icon {
+  font-size: 28px;
+  cursor: pointer;
+  width: 45px;
+}
+
+.institute-logo {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+
+/* =========================
+   DRAWER OVERLAY
+========================= */
+
+.institute-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 200;
+}
+
+
+/* =========================
+   DRAWER
+========================= */
+
+.institute-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 270px;
+  height: 100vh;
+  background: white;
+  z-index: 300;
+  box-shadow: 4px 0 18px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Drawer Header */
+
+.institute-drawer-header {
+  height: 70px;
+  background: #172554;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+
+/* Drawer Items */
+
+.institute-drawer-item {
+  padding: 18px 24px;
+  font-size: 16px;
+  color: #1e293b;
+  cursor: pointer;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.institute-drawer-item:hover {
+  background: #f1f5f9;
+}
+
+
+/* Logout */
+
+.institute-logout {
+  color: #dc2626;
+}
+
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.institute-main {
+  padding: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+/* Welcome */
+
+.institute-welcome {
+  margin-bottom: 40px;
+}
+
+.institute-welcome h1 {
+  margin: 0 0 10px;
+  font-size: 32px;
+  color: #172554;
+}
+
+.institute-welcome p {
+  margin: 0;
+  color: #64748b;
+  font-size: 16px;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.institute-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  max-width: 1000px;
+}
+
+.institute-action-card {
+  background: white;
+  border-radius: 18px;
+  padding: 32px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  text-align: center;
+}
+
+.institute-card-icon {
+  font-size: 42px;
+  margin-bottom: 16px;
+}
+
+.institute-action-card h2 {
+  color: #172554;
+  margin: 0 0 12px;
+  font-size: 22px;
+}
+
+.institute-action-card p {
+  color: #64748b;
+  line-height: 1.6;
+  min-height: 52px;
+  margin-bottom: 20px;
+}
+
+.institute-action-card button {
+  padding: 12px 22px;
+  border: none;
+  border-radius: 10px;
+  background: #172554;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.institute-action-card button:hover {
+  opacity: 0.9;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  .institute-main {
+    padding: 30px 20px;
+  }
+
+  .institute-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .institute-welcome h1 {
+    font-size: 26px;
+  }
+
+}
+/* =========================
+   ACCOUNT MODAL
+========================= */
+
+.institute-account-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.institute-account-modal {
+  width: 450px;
+  max-width: calc(100% - 40px);
+  background: white;
+  border-radius: 18px;
+  padding: 32px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.institute-account-modal h2 {
+  margin-top: 0;
+  margin-bottom: 25px;
+  color: #172554;
+}
+
+.institute-account-info {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.institute-account-info div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.institute-account-info span {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.institute-account-info strong {
+  font-size: 16px;
+  color: #1e293b;
+}
+
+.institute-account-close {
+  width: 100%;
+  margin-top: 25px;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #172554;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+}

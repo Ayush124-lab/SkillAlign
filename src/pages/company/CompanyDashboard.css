@@ -1,0 +1,231 @@
+.company-dashboard {
+  min-height: 100vh;
+  background: #f8fafc;
+  color: #172554;
+}
+
+/* Navbar */
+.company-navbar {
+  height: 64px;
+  background: #172554;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+  gap: 18px;
+  position: relative;
+  z-index: 100;
+}
+
+.company-menu-icon {
+  font-size: 23px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.company-logo {
+  font-size: 19px;
+  font-weight: 600;
+}
+
+/* Main */
+.company-main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 45px 30px;
+}
+
+.company-welcome {
+  margin-bottom: 38px;
+}
+
+.company-welcome h1 {
+  margin: 0 0 8px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.company-welcome p {
+  margin: 0;
+  color: #64748b;
+  font-size: 15px;
+}
+
+/* Cards */
+.company-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.company-action-card {
+  background: white;
+  border-radius: 18px;
+  padding: 28px;
+  min-height: 210px;
+  box-shadow: 0 5px 20px rgba(15, 23, 42, 0.06);
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.company-card-icon {
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+
+.company-action-card h2 {
+  margin: 0 0 10px;
+  font-size: 19px;
+  color: #172554;
+}
+
+.company-action-card p {
+  margin: 0 0 22px;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.company-action-card button {
+  background: #172554;
+  color: white;
+  border: none;
+  border-radius: 9px;
+  padding: 10px 17px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.company-action-card button:hover {
+  background: #1e3a8a;
+}
+
+/* Drawer */
+.company-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 270px;
+  height: 100vh;
+  background: white;
+  z-index: 200;
+  box-shadow: 5px 0 20px rgba(0, 0, 0, 0.12);
+}
+
+.company-drawer-header {
+  height: 64px;
+  background: #172554;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 25px;
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.company-drawer-item {
+  padding: 18px 25px;
+  font-size: 15px;
+  color: #172554;
+  cursor: pointer;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.company-drawer-item:hover {
+  background: #f8fafc;
+}
+
+.company-logout {
+  color: #dc2626;
+}
+
+.company-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.35);
+  z-index: 150;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .company-main {
+    padding: 30px 18px;
+  }
+
+  .company-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .company-welcome h1 {
+    font-size: 24px;
+  }
+}
+
+/* =========================
+   ACCOUNT MODAL
+========================= */
+
+.company-account-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.company-account-modal {
+  width: 450px;
+  max-width: calc(100% - 40px);
+  background: white;
+  border-radius: 18px;
+  padding: 32px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.company-account-modal h2 {
+  margin-top: 0;
+  margin-bottom: 25px;
+  color: #172554;
+}
+
+.company-account-info {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.company-account-info div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.company-account-info span {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.company-account-info strong {
+  font-size: 16px;
+  color: #1e293b;
+}
+
+.company-account-close {
+  width: 100%;
+  margin-top: 25px;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #172554;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+}

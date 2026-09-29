@@ -1,0 +1,357 @@
+.industry-demand-page {
+  min-height: 100vh;
+  background: #f8fafc;
+  color: #172554;
+}
+
+
+/* Navbar */
+
+.industry-demand-navbar {
+  height: 64px;
+  background: #172554;
+  color: white;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 30px;
+  gap: 18px;
+}
+
+.industry-demand-back {
+  border: none;
+  background: transparent;
+  color: white;
+
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.industry-demand-logo {
+  font-size: 19px;
+  font-weight: 600;
+}
+
+
+/* Main */
+
+.industry-demand-main {
+  max-width: 1150px;
+  margin: 0 auto;
+
+  padding: 42px 30px 60px;
+}
+
+.industry-demand-header {
+  margin-bottom: 28px;
+}
+
+.industry-demand-header h1 {
+  margin: 0 0 8px;
+  font-size: 28px;
+}
+
+.industry-demand-header p {
+  margin: 0;
+  color: #64748b;
+  font-size: 15px;
+}
+
+
+/* Summary */
+
+.demand-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.demand-summary-card {
+  background: white;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+
+  padding: 20px 24px;
+
+  box-shadow: 0 5px 20px rgba(15, 23, 42, 0.05);
+}
+
+.demand-summary-card span {
+  display: block;
+
+  color: #64748b;
+  font-size: 13px;
+
+  margin-bottom: 7px;
+}
+
+.demand-summary-card strong {
+  display: block;
+
+  font-size: 25px;
+
+  margin-bottom: 5px;
+}
+
+.demand-summary-card p {
+  margin: 0;
+
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+
+/* Sections */
+
+.skill-demand-section,
+.role-demand-section {
+  background: white;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+
+  padding: 25px;
+
+  box-shadow: 0 5px 20px rgba(15, 23, 42, 0.05);
+
+  margin-bottom: 24px;
+}
+
+.section-heading {
+  margin-bottom: 22px;
+}
+
+.section-heading h2 {
+  margin: 0 0 5px;
+  font-size: 19px;
+}
+
+.section-heading p {
+  margin: 0;
+
+  color: #64748b;
+  font-size: 13px;
+}
+
+
+/* Skill Demand */
+
+.skill-demand-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-demand-item {
+  display: grid;
+
+  grid-template-columns: 190px 1fr 55px;
+
+  align-items: center;
+
+  gap: 20px;
+
+  padding: 15px 0;
+
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.skill-demand-item:last-child {
+  border-bottom: none;
+}
+
+.skill-demand-info strong {
+  display: block;
+
+  font-size: 14px;
+
+  margin-bottom: 4px;
+}
+
+.skill-demand-info span {
+  color: #94a3b8;
+
+  font-size: 10px;
+}
+
+.skill-demand-bar {
+  height: 8px;
+
+  background: #e2e8f0;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+}
+
+.skill-demand-fill {
+  height: 100%;
+
+  background: #172554;
+
+  border-radius: 10px;
+}
+
+.skill-demand-percent {
+  text-align: right;
+
+  font-size: 13px;
+}
+
+
+/* Role Demand */
+
+.role-demand-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 18px;
+}
+
+.role-demand-card {
+  background: #f8fafc;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 14px;
+
+  padding: 18px;
+}
+
+.role-demand-top {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 15px;
+
+  margin-bottom: 18px;
+}
+
+.role-demand-top h3 {
+  margin: 0 0 5px;
+
+  font-size: 15px;
+}
+
+.role-demand-top p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 11px;
+}
+
+.role-demand-top > span {
+  background: #dcfce7;
+
+  color: #15803d;
+
+  padding: 5px 8px;
+
+  border-radius: 6px;
+
+  font-size: 10px;
+
+  font-weight: 600;
+}
+
+
+/* Top Skill */
+
+.top-skill {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  padding-top: 13px;
+
+  border-top: 1px solid #e2e8f0;
+}
+
+.top-skill span {
+  color: #64748b;
+
+  font-size: 11px;
+}
+
+.top-skill strong {
+  font-size: 13px;
+}
+
+
+/* Insight */
+
+.demand-insight {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 12px;
+
+  background: #eff6ff;
+
+  border: 1px solid #dbeafe;
+
+  border-radius: 14px;
+
+  padding: 17px 20px;
+}
+
+.demand-insight span {
+  font-size: 18px;
+}
+
+.demand-insight p {
+  margin: 0;
+
+  color: #334155;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+
+/* Responsive */
+
+@media (max-width: 800px) {
+
+  .industry-demand-main {
+    padding: 30px 18px;
+  }
+
+  .demand-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .role-demand-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-demand-item {
+    grid-template-columns: 140px 1fr 50px;
+
+    gap: 12px;
+  }
+
+}
+
+
+@media (max-width: 550px) {
+
+  .skill-demand-item {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-demand-percent {
+    text-align: left;
+  }
+
+}

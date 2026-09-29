@@ -1,4 +1,4 @@
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Navbar from '../common/Navbar';
 import LoginForm from './LoginForm';
 import RegisterForm from './RegisterForm';
@@ -7,63 +7,108 @@ import './AuthPage.css';
 
 function AuthPage({ role, mode: modeProp }) {
   const navigate = useNavigate();
-  const location = useLocation();
 
   const config = roleConfig[role];
-  // Default to login when visiting /{role} directly
+
+  // Default mode is Login
   const mode = modeProp || 'login';
 
   const isLogin = mode === 'login';
 
-  // Roles that have a dashboard ready get an onSuccess callback
-  const dashboardPath = role === 'student' ? `/${role}/dashboard` : null;
-  const handleSuccess = dashboardPath ? () => navigate(dashboardPath) : undefined;
+  // Dashboard paths
+  const dashboardPath =
+    role === 'student'
+      ? '/student/dashboard'
+      : role === 'company'
+        ? '/company/dashboard'
+        : role === 'institute'
+          ? '/institute/dashboard'
+          : null;
 
+  // After Login / Register
+  const handleSuccess = dashboardPath
+    ? () => navigate(dashboardPath)
+    : undefined;
+
+  // Switch between Login and Register
   const switchMode = (newMode) => {
-    navigate(`/${role}/${newMode}`, { replace: true });
+    navigate(`/${role}/${newMode}`, {
+      replace: true,
+    });
   };
 
   return (
     <div className="auth-page">
+
       <Navbar />
 
       <main className="auth-main">
+
         <div className="auth-container">
+
           {/* Header */}
           <div className="auth-header">
-            <button className="auth-back" onClick={() => navigate('/')}>
+
+            <button
+              className="auth-back"
+              onClick={() => navigate('/')}
+            >
               ← Back to roles
             </button>
-            <span className="auth-role-icon">{config.icon}</span>
+
+            <span className="auth-role-icon">
+              {config.icon}
+            </span>
+
             <h1 className="auth-title">
-              {config.label} {isLogin ? 'Login' : 'Registration'}
+              {config.label}{' '}
+              {isLogin ? 'Login' : 'Registration'}
             </h1>
+
             <p className="auth-subtitle">
               {isLogin
                 ? `Sign in to your ${config.label} account`
                 : `Create a new ${config.label} account`}
             </p>
+
           </div>
 
-          {/* Mode Toggle */}
+
+          {/* Login / Register Toggle */}
           <div className="auth-toggle">
+
             <button
-              className={`auth-toggle-btn ${isLogin ? 'auth-toggle-btn--active' : ''}`}
+              className={`auth-toggle-btn ${
+                isLogin
+                  ? 'auth-toggle-btn--active'
+                  : ''
+              }`}
               onClick={() => switchMode('login')}
             >
               Login
             </button>
+
             <button
-              className={`auth-toggle-btn ${!isLogin ? 'auth-toggle-btn--active' : ''}`}
+              className={`auth-toggle-btn ${
+                !isLogin
+                  ? 'auth-toggle-btn--active'
+                  : ''
+              }`}
               onClick={() => switchMode('register')}
             >
               Register
             </button>
+
           </div>
+
 
           {/* Form */}
           {isLogin ? (
-            <LoginForm role={role} roleLabel={config.label} onSuccess={handleSuccess} />
+            <LoginForm
+              role={role}
+              roleLabel={config.label}
+              onSuccess={handleSuccess}
+            />
           ) : (
             <RegisterForm
               role={role}
@@ -73,26 +118,40 @@ function AuthPage({ role, mode: modeProp }) {
             />
           )}
 
+
           {/* Switch Prompt */}
           <p className="auth-switch">
+
             {isLogin ? (
               <>
                 Don't have an account?{' '}
-                <button className="auth-link" onClick={() => switchMode('register')}>
+
+                <button
+                  className="auth-link"
+                  onClick={() => switchMode('register')}
+                >
                   Register here
                 </button>
               </>
             ) : (
               <>
                 Already have an account?{' '}
-                <button className="auth-link" onClick={() => switchMode('login')}>
+
+                <button
+                  className="auth-link"
+                  onClick={() => switchMode('login')}
+                >
                   Login here
                 </button>
               </>
             )}
+
           </p>
+
         </div>
+
       </main>
+
     </div>
   );
 }

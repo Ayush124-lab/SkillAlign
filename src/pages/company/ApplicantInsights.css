@@ -1,0 +1,382 @@
+.applicant-insights-page {
+  min-height: 100vh;
+  background: #f8fafc;
+  color: #172554;
+}
+
+
+/* Navbar */
+
+.applicant-insights-navbar {
+  height: 64px;
+  background: #172554;
+  color: white;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 30px;
+  gap: 18px;
+}
+
+.applicant-insights-back {
+  border: none;
+  background: transparent;
+  color: white;
+
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.applicant-insights-logo {
+  font-size: 19px;
+  font-weight: 600;
+}
+
+
+/* Main */
+
+.applicant-insights-main {
+  max-width: 1150px;
+  margin: 0 auto;
+
+  padding: 42px 30px 60px;
+}
+
+.applicant-insights-header {
+  margin-bottom: 28px;
+}
+
+.applicant-insights-header h1 {
+  margin: 0 0 8px;
+
+  font-size: 28px;
+}
+
+.applicant-insights-header p {
+  margin: 0;
+
+  color: #64748b;
+  font-size: 15px;
+}
+
+
+/* Summary */
+
+.insights-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px;
+
+  margin-bottom: 28px;
+}
+
+.insight-summary-card {
+  background: white;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+
+  padding: 20px 24px;
+
+  box-shadow: 0 5px 20px rgba(15, 23, 42, 0.05);
+}
+
+.insight-summary-card span {
+  display: block;
+
+  color: #64748b;
+  font-size: 13px;
+
+  margin-bottom: 8px;
+}
+
+.insight-summary-card strong {
+  display: block;
+
+  font-size: 25px;
+
+  margin-bottom: 5px;
+}
+
+.insight-summary-card p {
+  margin: 0;
+
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+
+/* Sections */
+
+.skill-gap-section,
+.role-insights-section {
+  background: white;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+
+  padding: 25px;
+
+  box-shadow: 0 5px 20px rgba(15, 23, 42, 0.05);
+
+  margin-bottom: 24px;
+}
+
+.section-heading {
+  margin-bottom: 22px;
+}
+
+.section-heading h2 {
+  margin: 0 0 5px;
+
+  font-size: 19px;
+}
+
+.section-heading p {
+  margin: 0;
+
+  color: #64748b;
+  font-size: 13px;
+}
+
+
+/* Skill Gaps */
+
+.skill-gap-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-gap-item {
+  display: grid;
+
+  grid-template-columns: 180px 1fr 55px;
+
+  align-items: center;
+
+  gap: 20px;
+
+  padding: 15px 0;
+
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.skill-gap-item:last-child {
+  border-bottom: none;
+}
+
+.skill-gap-info strong {
+  display: block;
+
+  font-size: 14px;
+
+  margin-bottom: 4px;
+}
+
+.skill-gap-info span {
+  color: #94a3b8;
+
+  font-size: 11px;
+}
+
+
+/* Skill Gap Bar */
+
+.skill-gap-bar {
+  width: 100%;
+  height: 8px;
+
+  background: #e2e8f0;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+}
+
+.skill-gap-fill {
+  height: 100%;
+
+  background: #172554;
+
+  border-radius: 10px;
+}
+
+.skill-gap-percent {
+  text-align: right;
+
+  font-size: 14px;
+}
+
+
+/* Role Insights */
+
+.role-insights-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 18px;
+}
+
+.role-insight-card {
+  border: 1px solid #e2e8f0;
+
+  border-radius: 14px;
+
+  padding: 18px;
+
+  background: #f8fafc;
+}
+
+.role-insight-top {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-start;
+
+  gap: 15px;
+
+  margin-bottom: 18px;
+}
+
+.role-insight-top h3 {
+  margin: 0 0 5px;
+
+  font-size: 15px;
+}
+
+.role-insight-top p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 11px;
+}
+
+.role-match-badge {
+  background: #dcfce7;
+
+  color: #15803d;
+
+  padding: 6px 9px;
+
+  border-radius: 7px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+
+/* Role Match */
+
+.role-match-label {
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-bottom: 8px;
+}
+
+.role-match-label span {
+  color: #64748b;
+
+  font-size: 11px;
+}
+
+.role-match-label strong {
+  font-size: 12px;
+}
+
+.role-match-bar {
+  width: 100%;
+
+  height: 7px;
+
+  background: #e2e8f0;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+}
+
+.role-match-fill {
+  height: 100%;
+
+  background: #172554;
+
+  border-radius: 10px;
+}
+
+
+/* Insight Note */
+
+.insight-note {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 12px;
+
+  background: #eff6ff;
+
+  border: 1px solid #dbeafe;
+
+  border-radius: 14px;
+
+  padding: 17px 20px;
+}
+
+.insight-note span {
+  font-size: 18px;
+}
+
+.insight-note p {
+  margin: 0;
+
+  color: #334155;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+
+/* Responsive */
+
+@media (max-width: 800px) {
+
+  .applicant-insights-main {
+    padding: 30px 18px;
+  }
+
+  .insights-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .role-insights-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-gap-item {
+    grid-template-columns: 130px 1fr 45px;
+    gap: 12px;
+  }
+
+}
+
+
+@media (max-width: 550px) {
+
+  .skill-gap-item {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-gap-percent {
+    text-align: left;
+  }
+
+}
