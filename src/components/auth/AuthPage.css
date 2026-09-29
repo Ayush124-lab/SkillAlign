@@ -235,3 +235,21 @@
     padding: var(--space-xl) var(--space-lg);
   }
 }
+
+.auth-back-to-roles {
+  width: 100%;
+  margin-top: 18px;
+  padding: 13px 16px;
+  border: none;
+  border-radius: 10px;
+  background: #172554;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.auth-back-to-roles:hover {
+  background: #1e3a8a;
+}

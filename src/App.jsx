@@ -14,8 +14,10 @@ import FindCandidates from "./pages/company/FindCandidates";
 import ApplicantInsights from "./pages/company/ApplicantInsights";
 import InstituteDashboard from "./pages/institute/InstituteDashboard";
 import UploadSyllabus from "./pages/institute/UploadSyllabus";
-// import IndustrySkillDemand from "./pages/company/IndustrySkillDemand";
+import IndustrySkillDemand from "./pages/company/IndustrySkillDemand";
 import CurriculumAnalysis from "./pages/institute/CurriculumAnalysis";
+import GovernmentDashboard from "./pages/government/GovernmentDashboard";
+import GovernmentInstituteDetails from "./pages/government/GovernmentInstituteDetails";
 function App() {
   return (
     <Routes>
@@ -188,13 +190,37 @@ function App() {
       path="/institute/upload-syllabus"
       element={<UploadSyllabus />}
     />
-    {/* <Route
+    { <Route
     path="/company/skill-demand"
     element={<IndustrySkillDemand />}
-  /> */}
+  />}
   <Route
   path="/institute/curriculum-analysis"
   element={<CurriculumAnalysis />}
+/>
+<Route
+  path="/government"
+  element={<AuthPage role="government" />}
+/>
+
+<Route
+  path="/government/login"
+  element={<AuthPage role="government" mode="login" />}
+/>
+
+<Route
+  path="/government/register"
+  element={<AuthPage role="government" mode="register" />}
+/>
+
+<Route
+  path="/government/dashboard"
+  element={<GovernmentDashboard />}
+/>
+
+<Route
+  path="/government/institute/:instituteId"
+  element={<GovernmentInstituteDetails />}
 />
 
     </Routes>

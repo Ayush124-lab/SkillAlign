@@ -10,12 +10,9 @@ function AuthPage({ role, mode: modeProp }) {
 
   const config = roleConfig[role];
 
-  // Default mode is Login
   const mode = modeProp || 'login';
-
   const isLogin = mode === 'login';
 
-  // Dashboard paths
   const dashboardPath =
     role === 'student'
       ? '/student/dashboard'
@@ -23,14 +20,14 @@ function AuthPage({ role, mode: modeProp }) {
         ? '/company/dashboard'
         : role === 'institute'
           ? '/institute/dashboard'
-          : null;
+          : role === 'government'
+            ? '/government/dashboard'
+            : null;
 
-  // After Login / Register
   const handleSuccess = dashboardPath
     ? () => navigate(dashboardPath)
     : undefined;
 
-  // Switch between Login and Register
   const switchMode = (newMode) => {
     navigate(`/${role}/${newMode}`, {
       replace: true,
@@ -39,14 +36,11 @@ function AuthPage({ role, mode: modeProp }) {
 
   return (
     <div className="auth-page">
-
       <Navbar />
 
       <main className="auth-main">
-
         <div className="auth-container">
 
-          {/* Header */}
           <div className="auth-header">
 
             <button
@@ -73,15 +67,11 @@ function AuthPage({ role, mode: modeProp }) {
 
           </div>
 
-
-          {/* Login / Register Toggle */}
           <div className="auth-toggle">
 
             <button
               className={`auth-toggle-btn ${
-                isLogin
-                  ? 'auth-toggle-btn--active'
-                  : ''
+                isLogin ? 'auth-toggle-btn--active' : ''
               }`}
               onClick={() => switchMode('login')}
             >
@@ -90,9 +80,7 @@ function AuthPage({ role, mode: modeProp }) {
 
             <button
               className={`auth-toggle-btn ${
-                !isLogin
-                  ? 'auth-toggle-btn--active'
-                  : ''
+                !isLogin ? 'auth-toggle-btn--active' : ''
               }`}
               onClick={() => switchMode('register')}
             >
@@ -101,8 +89,6 @@ function AuthPage({ role, mode: modeProp }) {
 
           </div>
 
-
-          {/* Form */}
           {isLogin ? (
             <LoginForm
               role={role}
@@ -118,14 +104,10 @@ function AuthPage({ role, mode: modeProp }) {
             />
           )}
 
-
-          {/* Switch Prompt */}
           <p className="auth-switch">
-
             {isLogin ? (
               <>
                 Don't have an account?{' '}
-
                 <button
                   className="auth-link"
                   onClick={() => switchMode('register')}
@@ -136,7 +118,6 @@ function AuthPage({ role, mode: modeProp }) {
             ) : (
               <>
                 Already have an account?{' '}
-
                 <button
                   className="auth-link"
                   onClick={() => switchMode('login')}
@@ -145,13 +126,18 @@ function AuthPage({ role, mode: modeProp }) {
                 </button>
               </>
             )}
-
           </p>
 
+          {/* BACK TO ROLES */}
+          <button
+            className="auth-back-to-roles"
+            onClick={() => navigate('/')}
+          >
+            ← Back to roles
+          </button>
+
         </div>
-
       </main>
-
     </div>
   );
 }

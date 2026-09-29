@@ -33,6 +33,132 @@ const initialVacancies = [
   },
 ];
 
+const candidateData = {
+  1: [
+    {
+      name: "Aarav Sharma",
+      skills: "Python • SQL • Machine Learning",
+      matched: ["Python ✓", "SQL ✓", "ML ✓"],
+      missing: ["TensorFlow ✕"],
+      match: 91,
+    },
+    {
+      name: "Ishita Kulkarni",
+      skills: "Python • TensorFlow • SQL",
+      matched: ["Python ✓", "TensorFlow ✓", "SQL ✓"],
+      missing: ["Machine Learning ✕"],
+      match: 86,
+    },
+    {
+      name: "Kabir Mehta",
+      skills: "Python • Machine Learning • TensorFlow",
+      matched: ["Python ✓", "ML ✓", "TensorFlow ✓"],
+      missing: ["SQL ✕"],
+      match: 83,
+    },
+    {
+      name: "Sneha Patil",
+      skills: "Python • SQL • Statistics",
+      matched: ["Python ✓", "SQL ✓"],
+      missing: ["Machine Learning ✕", "TensorFlow ✕"],
+      match: 74,
+    },
+  ],
+
+  2: [
+    {
+      name: "Aditya Mehta",
+      skills: "Python • Django • SQL • Git",
+      matched: ["Python ✓", "Django ✓", "SQL ✓", "Git ✓"],
+      missing: [],
+      match: 94,
+    },
+    {
+      name: "Kunal Shah",
+      skills: "Python • Django • Git",
+      matched: ["Python ✓", "Django ✓", "Git ✓"],
+      missing: ["SQL ✕"],
+      match: 88,
+    },
+    {
+      name: "Meera Joshi",
+      skills: "Python • SQL • Git",
+      matched: ["Python ✓", "SQL ✓", "Git ✓"],
+      missing: ["Django ✕"],
+      match: 81,
+    },
+    {
+      name: "Vivek Rao",
+      skills: "Python • SQL • Java",
+      matched: ["Python ✓", "SQL ✓"],
+      missing: ["Django ✕", "Git ✕"],
+      match: 73,
+    },
+  ],
+
+  3: [
+    {
+      name: "Ananya Rao",
+      skills: "Python • SQL • Excel • Power BI",
+      matched: ["Python ✓", "SQL ✓", "Excel ✓", "Power BI ✓"],
+      missing: [],
+      match: 93,
+    },
+    {
+      name: "Siddharth Joshi",
+      skills: "SQL • Excel • Power BI",
+      matched: ["SQL ✓", "Excel ✓", "Power BI ✓"],
+      missing: ["Python ✕"],
+      match: 87,
+    },
+    {
+      name: "Megha Desai",
+      skills: "Python • SQL • Statistics",
+      matched: ["Python ✓", "SQL ✓"],
+      missing: ["Excel ✕", "Power BI ✕"],
+      match: 78,
+    },
+    {
+      name: "Rahul Verma",
+      skills: "Excel • Power BI • SQL",
+      matched: ["Excel ✓", "Power BI ✓", "SQL ✓"],
+      missing: ["Python ✕"],
+      match: 76,
+    },
+  ],
+
+  4: [
+    {
+      name: "Ishan Kapoor",
+      skills: "JavaScript • React • HTML • CSS",
+      matched: ["JavaScript ✓", "React ✓", "HTML ✓", "CSS ✓"],
+      missing: [],
+      match: 92,
+    },
+    {
+      name: "Kavya Nair",
+      skills: "HTML • CSS • React",
+      matched: ["HTML ✓", "CSS ✓", "React ✓"],
+      missing: ["JavaScript ✕"],
+      match: 87,
+    },
+    {
+      name: "Arjun Malhotra",
+      skills: "JavaScript • React • CSS",
+      matched: ["JavaScript ✓", "React ✓", "CSS ✓"],
+      missing: ["HTML ✕"],
+      match: 81,
+    },
+    {
+      name: "Simran Kapoor",
+      skills: "HTML • CSS • JavaScript",
+      matched: ["HTML ✓", "CSS ✓", "JavaScript ✓"],
+      missing: ["React ✕"],
+      match: 75,
+    },
+  ],
+};
+
 const FindCandidates = () => {
   const navigate = useNavigate();
 
@@ -42,7 +168,8 @@ const FindCandidates = () => {
     return saved ? JSON.parse(saved) : initialVacancies;
   });
 
-  const [selectedRole, setSelectedRole] = useState(null);
+  // Multiple vacancy cards can now stay open at the same time
+  const [selectedRoles, setSelectedRoles] = useState([]);
 
   useEffect(() => {
     localStorage.setItem(
@@ -74,6 +201,14 @@ const FindCandidates = () => {
             }
           : item
       )
+    );
+  };
+
+  const toggleCandidates = (id) => {
+    setSelectedRoles((prev) =>
+      prev.includes(id)
+        ? prev.filter((roleId) => roleId !== id)
+        : [...prev, id]
     );
   };
 
@@ -141,18 +276,12 @@ const FindCandidates = () => {
 
             <div
               className={`vacancy-role-card ${
-                selectedRole === item.id
+                selectedRoles.includes(item.id)
                   ? "vacancy-role-card-selected"
                   : ""
               }`}
               key={item.id}
-              onClick={() =>
-                setSelectedRole(
-                  selectedRole === item.id
-                    ? null
-                    : item.id
-                )
-              }
+              onClick={() => toggleCandidates(item.id)}
             >
 
               <div className="vacancy-role-top">
@@ -226,13 +355,15 @@ const FindCandidates = () => {
                 className="view-candidates-btn"
                 onClick={(e) => {
                   e.stopPropagation();
-                  setSelectedRole(item.id);
+                  toggleCandidates(item.id);
                 }}
               >
-                View Matching Candidates
+                {selectedRoles.includes(item.id)
+                  ? "Hide Candidates"
+                  : "Review Candidates"}
               </button>
 
-              {selectedRole === item.id && (
+              {selectedRoles.includes(item.id) && (
 
                 <div className="candidate-preview">
 
@@ -240,175 +371,79 @@ const FindCandidates = () => {
                     Matching Candidates
                   </h3>
 
-                  {/* Candidate 1 */}
-                  <div className="candidate-item">
+                  {candidateData[item.id].map(
+                    (candidate) => (
 
-                    <div className="candidate-info">
+                      <div
+                        className="candidate-item"
+                        key={candidate.name}
+                      >
 
-                      <strong>
-                        Aarav Sharma
-                      </strong>
+                        <div className="candidate-info">
 
-                      <p>
-                        Python • SQL • Machine Learning
-                      </p>
+                          <strong>
+                            {candidate.name}
+                          </strong>
 
-                      <div className="candidate-skill-row">
+                          <p>
+                            {candidate.skills}
+                          </p>
 
-                        <span className="skill-match">
-                          Python ✓
-                        </span>
+                          <div className="candidate-skill-row">
 
-                        <span className="skill-match">
-                          SQL ✓
-                        </span>
+                            {candidate.matched.map(
+                              (skill) => (
+                                <span
+                                  className="skill-match"
+                                  key={skill}
+                                >
+                                  {skill}
+                                </span>
+                              )
+                            )}
 
-                        <span className="skill-match">
-                          ML ✓
-                        </span>
+                            {candidate.missing.map(
+                              (skill) => (
+                                <span
+                                  className="skill-missing"
+                                  key={skill}
+                                >
+                                  {skill}
+                                </span>
+                              )
+                            )}
 
-                        <span className="skill-missing">
-                          TensorFlow ✕
-                        </span>
+                          </div>
 
-                      </div>
+                          <div className="candidate-match-bar">
 
-                      <div className="candidate-match-bar">
+                            <div
+                              className="candidate-match-fill"
+                              style={{
+                                width: `${candidate.match}%`,
+                              }}
+                            ></div>
 
-                        <div
-                          className="candidate-match-fill"
-                          style={{ width: "91%" }}
-                        ></div>
+                          </div>
 
-                      </div>
+                        </div>
 
-                    </div>
+                        <div className="candidate-match">
 
-                    <div className="candidate-match">
+                          <strong>
+                            {candidate.match}%
+                          </strong>
 
-                      <strong>91%</strong>
+                          <span>
+                            Skill Match
+                          </span>
 
-                      <span>
-                        Skill Match
-                      </span>
-
-                    </div>
-
-                  </div>
-
-
-                  {/* Candidate 2 */}
-                  <div className="candidate-item">
-
-                    <div className="candidate-info">
-
-                      <strong>
-                        Neha Deshmukh
-                      </strong>
-
-                      <p>
-                        Python • TensorFlow • SQL
-                      </p>
-
-                      <div className="candidate-skill-row">
-
-                        <span className="skill-match">
-                          Python ✓
-                        </span>
-
-                        <span className="skill-match">
-                          TensorFlow ✓
-                        </span>
-
-                        <span className="skill-match">
-                          SQL ✓
-                        </span>
-
-                        <span className="skill-missing">
-                          Docker ✕
-                        </span>
+                        </div>
 
                       </div>
 
-                      <div className="candidate-match-bar">
-
-                        <div
-                          className="candidate-match-fill"
-                          style={{ width: "87%" }}
-                        ></div>
-
-                      </div>
-
-                    </div>
-
-                    <div className="candidate-match">
-
-                      <strong>87%</strong>
-
-                      <span>
-                        Skill Match
-                      </span>
-
-                    </div>
-
-                  </div>
-
-
-                  {/* Candidate 3 */}
-                  <div className="candidate-item">
-
-                    <div className="candidate-info">
-
-                      <strong>
-                        Rohan Kulkarni
-                      </strong>
-
-                      <p>
-                        Python • ML • Git
-                      </p>
-
-                      <div className="candidate-skill-row">
-
-                        <span className="skill-match">
-                          Python ✓
-                        </span>
-
-                        <span className="skill-match">
-                          ML ✓
-                        </span>
-
-                        <span className="skill-missing">
-                          TensorFlow ✕
-                        </span>
-
-                        <span className="skill-missing">
-                          SQL ✕
-                        </span>
-
-                      </div>
-
-                      <div className="candidate-match-bar">
-
-                        <div
-                          className="candidate-match-fill"
-                          style={{ width: "82%" }}
-                        ></div>
-
-                      </div>
-
-                    </div>
-
-                    <div className="candidate-match">
-
-                      <strong>82%</strong>
-
-                      <span>
-                        Skill Match
-                      </span>
-
-                    </div>
-
-                  </div>
+                    )
+                  )}
 
                 </div>
 
