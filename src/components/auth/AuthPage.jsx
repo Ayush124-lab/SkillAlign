@@ -43,13 +43,6 @@ function AuthPage({ role, mode: modeProp }) {
 
           <div className="auth-header">
 
-            <button
-              className="auth-back"
-              onClick={() => navigate('/')}
-            >
-              ← Back to roles
-            </button>
-
             <span className="auth-role-icon">
               {config.icon}
             </span>
